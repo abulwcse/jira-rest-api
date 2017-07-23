@@ -1,5 +1,5 @@
 {
-  "name": "abul/jira-api",
+  "name": "abul/jira-php-client",
   "description": "A PHP library making interaction with JIRA simpler.",
   "license": "MIT",
   "authors": [
