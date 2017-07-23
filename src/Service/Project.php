@@ -64,8 +64,7 @@ class Project
      */
     public function getReleaseVersionList($projectKey)
     {
-        $response = $this->client->request('GET','/rest/api/2/project/' . urlencode($projectKey) .'/versions');
-        $versions = json_decode($response->getBody());
+        $versions = $this->client->request('GET','/rest/api/2/project/' . urlencode($projectKey) .'/versions');
         $list = [];
         foreach ($versions as $version) {
             if ($version->released) {
