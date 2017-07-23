@@ -8,6 +8,7 @@ use Jira\Authentication\BasicAuthenticationService;
 use Jira\Service\Issue;
 use Jira\Service\Project;
 use Jira\Service\User;
+use Jira\Service\Version;
 
 class Client
 {
@@ -39,6 +40,9 @@ class Client
                 break;
             case 'issue':
                 return new Issue($this->client);
+                break;
+            case 'version':
+                return new Version($this->client);
                 break;
             default:
                 throw new \Exception("Unable to find service");

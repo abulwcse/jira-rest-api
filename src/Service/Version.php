@@ -37,6 +37,16 @@ class Version
      */
     public function updateVersion($version)
     {
-        $this->client->request('PUT','/rest/api/2/version/'. $version->id);
+        $this->client->request('PUT','/rest/api/2/version/'. $version->id, ['body' => json_decode(json_encode($version), true)]);
+    }
+
+    /**
+     * Create a new version
+     *
+     * @param object $version
+     */
+    public function createVersion($version)
+    {
+        $this->client->request('POST','/rest/api/2/version', ['body' => json_decode(json_encode($version), true)]);
     }
 }
