@@ -26,7 +26,7 @@ foreach ( $issues as $issue ) {
 ## Installation
 
 ```
-php composer.phar require abul/jira-php-client ^1.0@dev
+php composer.phar require abul/jira-php-client ^0.1@dev
 ```
 
 ## Requirements
