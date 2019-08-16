@@ -27,7 +27,7 @@ class Version
      */
     public function getVersion($versionId)
     {
-        return $this->client->request('GET','/rest/api/2/version/'. urlencode($versionId));
+        return $this->client->get('/rest/api/2/version/'. urlencode($versionId));
     }
 
     /**
@@ -37,7 +37,7 @@ class Version
      */
     public function updateVersion($version)
     {
-       $this->client->request('PUT','/rest/api/2/version/'. $version->id, [
+       $this->client->put('/rest/api/2/version/'. $version->id, [
             'json' => json_decode(json_encode($version), true)
        ]);
     }
@@ -49,7 +49,7 @@ class Version
      */
     public function createVersion($version)
     {
-        $this->client->request('POST','/rest/api/2/version', [
+        $this->client->post('/rest/api/2/version', [
             'json' => json_decode(json_encode($version), true)
         ]);
     }
