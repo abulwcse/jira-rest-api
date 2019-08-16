@@ -156,7 +156,7 @@ class Issue
      * @param int $commentId
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function getComment($issueKey, $commentId)
+    public function deleteComment($issueKey, $commentId)
     {
         return $this->client->delete('/rest/api/2/issue/' . urlencode($issueKey) . '/comment/' . urlencode($commentId));
     }
